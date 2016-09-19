@@ -2,7 +2,7 @@ var express = require('express');
 var request = require('request');
 var fs = require('fs');
 var app = express();
-var port = process.env.PORT;
+const PORT = process.env.PORT || 3000;
 
 //Example 1
 // var url = "http://www.google.com";
@@ -16,8 +16,19 @@ var port = process.env.PORT;
 // });
 
 //Example 2
+// var url = "http://www.google.com";
+// var destination = fs.createWriteStream("./downloads/google1.html");
+// request(url).pipe(destination);
 
+// Example 3
+var url = "http://www.google.com";
+var destination = fs.createWriteStream("./downloads/google1.html");
+request(url).pipe(destination).on('finish', function(){
+    console.log("All Done!");
+}).on("error", function(error){
+    console.log(error);
+});
 
-app.listen(port, function(){
-    console.log("Alive on " + port)
-})
+app.listen(PORT, function(){
+    console.log("Alive on " + PORT)
+});
