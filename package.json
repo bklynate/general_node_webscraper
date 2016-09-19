@@ -3,11 +3,12 @@
   "version": "0.0.0",
   "description": "A simple webscraper written with NodeJs",
   "main": "server.js",
-  "repository": "",
+  "repository": "git@github.com:bklynate/general_node_webscraper.git",
   "author": "Nathaniel Quashie",
   "dependencies": {
     "async": "~0.2.8",
     "express": "~3.2.4",
+    "request": "^2.75.0",
     "socket.io": "~0.9.14"
   }
 }
